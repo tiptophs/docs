@@ -11,22 +11,39 @@ module.exports = {
         logo: '',
         nav: [
             { text: '首页', link: '/' },
-            { text: '导读', link: '/guide/'},
+            { text: '导读', link: '/guide'},
             {
-                text: '文档/笔记',
+                text: '前端',
                 items: [
-                    { text: '前端开发', items: [
+                    { text: '渐进式框架', items: [
                         { text: 'Vue', link: '/vue' },
-                        { text: 'Bootstrap', link: '/bootstrap' },
-                        { text: 'ElementUI', link: '/element' },
-                    ] },
-                    { text: '后端开发', items: [
-                        { text: 'PHP', link: '/language/chinese/' },
-                        { text: 'NodeJs', link: '/language/japanese/' }
-                    ] },
+                    ]},
+                    { text: 'JS相关', items: [
+                        { text: 'es6', link: '/es6' },
+                    ]},
+                    { text: '桌面组件库', items: [
+                        { text: 'ElementUi', link: '/el' },
+                    ]}, 
+                ]
+            },
+            {
+                text: '后端',
+                items: [
+                    { text: 'PHP', link: '/php' },
+                    { text: 'NodeJs', link: '/node' }                
+                ]
+            },
+            {
+                text: '开发工具',
+                items: [
                     { text: '开发工具', items: [
-                        { text: 'Vscode', link: '/language/chinese/' },
-                        { text: 'Git', link: '/language/japanese/' }
+                        { text: 'Vscode', link: '/vscode' },
+                    ] },
+                    { text: '版本管理', items: [
+                        { text: 'git', link: '/git/' },
+                    ] },
+                    { text: '打包管理', items: [
+                        { text: 'webpack', link: '/webpack' },
                     ] },                  
                 ]
             },
@@ -34,11 +51,34 @@ module.exports = {
         ],
         navbar: true,
         //侧边栏部分
-        sidebar: 'auto',
+        sidebar: {
+            '/git/': [
+              '',     /* /foo/ */
+              'git-a',  /* /foo/one.html */
+              'git-b'   /* /foo/two.html */
+            ],
+      
+            '/bar/': [
+              '',      /* /bar/ */
+              'three', /* /bar/three.html */
+              'four'   /* /bar/four.html */
+            ],
+      
+            // fallback
+            '/': [
+              '',        /* / */
+              'contact', /* /contact.html */
+              'about'    /* /about.html */
+            ]
+          },
         displayAllHeaders: false, // 默认值：false,
-        activeHeaderLinks: false, // 默认值：true
+        activeHeaderLinks: true, // 默认值：true
         search: true,
         searchMaxSuggestions: 30,
         lastUpdated: 'Last Updated', // string | boolean
+        // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
+        nextLinks: true,
+        // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
+        prevLinks: true
     }
 }
